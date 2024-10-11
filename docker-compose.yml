@@ -14,7 +14,6 @@ services:
     depends_on:
       - db
       - redis
-
   db:
     image: postgres:15-alpine
     env_file:
@@ -28,7 +27,6 @@ services:
     image: redis:alpine
     ports:
       - "6379:6379"
-
   pgadmin:
     image: dpage/pgadmin4
     environment:
@@ -38,6 +36,5 @@ services:
       - "8084:80"
     depends_on:
       - db
-
 volumes:
   pgdata:
